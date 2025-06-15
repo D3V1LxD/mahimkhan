@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Mahim Khan </title>
+    <title>Md. Mahim Khan</title>
     
     <link rel="icon" type="image/jpg" href="icon.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -88,39 +87,24 @@
         }
         
         /* 3D Flip Card for Contact Section */
-        .flip-card {
-            perspective: 1000px;
-            width: 100%;
-            height: 100%;
-        }
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-        .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-        .flip-card-back {
-            transform: rotateY(180deg);
-        }
-
+        .flip-card { perspective: 1000px; width: 100%; height: 100%; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+        .flip-card-back { transform: rotateY(180deg); }
+        
         /* Custom Swiper Styles & Project Card */
         .projects-slider { padding-bottom: 50px; }
         .swiper-container { width: 100%; position: relative; }
+        .swiper-pagination-bullet { background-color: #312F36 !important;}
         .swiper-pagination-bullet-active { background-color: #AFFF0C !important; }
-        .swiper-button-next, .swiper-button-prev { color: #AFFF0C !important; }
+        .swiper-button-next, .swiper-button-prev { color: #AFFF0C !important; transition: all 0.3s ease; }
+        .swiper-button-next:hover, .swiper-button-prev:hover { transform: scale(1.2); }
         .swiper-button-next::after, .swiper-button-prev::after { font-size: 1.5rem !important; }
+        .swiper-slide { height: auto; } /* Ensure slides stretch to content height */
 
+
+        /* Project Card Button */
         .view-project-btn { @apply inline-block text-center bg-lime-green text-eerie-black font-semibold py-2 px-5 rounded-lg transition-all duration-300 group; }
         .view-project-btn:hover { @apply shadow-lg shadow-lime-green/20; }
         .view-project-btn .btn-icon { @apply inline-block transition-transform duration-300; }
@@ -213,12 +197,56 @@
                         <h2 class="text-lime-green font-bold text-sm tracking-widest uppercase mb-4">Projects</h2>
                         <div class="swiper-container projects-slider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col"><img src="image1.jpg" alt="Project Image" class="w-full h-32 object-cover"><div class="p-3 flex flex-col flex-grow"><h4 class="text-md font-bold text-white mb-2">Maxsurf Hull Design & Optimization</h4><p class="text-xs text-light-gray flex-grow mb-3">Utilizing Maxsurf to create and refine high-performance hull forms, ensuring optimal stability, low resistance, and superior seakeeping capabilities for various vessel types.</p><a href="#" class="view-project-btn mt-auto self-start text-xs py-1 px-3">View <i class="fas fa-arrow-right btn-icon"></i></a></div></div></div>
-                                <div class="swiper-slide"><div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col"><img src="image2.jpg" alt="Project Image" class="w-full h-32 object-cover"><div class="p-3 flex flex-col flex-grow"><h4 class="text-md font-bold text-white mb-2">CAESES Propeller Design</h4><p class="text-xs text-light-gray flex-grow mb-3">Leveraging the CAESES platform to design and automate custom propeller geometries, focusing on maximizing hydrodynamic efficiency and minimizing cavitation.</p><a href="#" class="view-project-btn mt-auto self-start text-xs py-1 px-3">View <i class="fas fa-arrow-right btn-icon"></i></a></div></div></div>
-                                <div class="swiper-slide"><div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col"><img src="image3.jpg" alt="Project Image" class="w-full h-32 object-cover"><div class="p-3 flex flex-col flex-grow"><h4 class="text-md font-bold text-white mb-2">Shell Expansion & Plate Development</h4><p class="text-xs text-light-gray flex-grow mb-3">Creating detailed 2D shell expansion plans from complex 3D hull models, providing precise plate layouts essential for accurate and efficient shipyard fabrication.</p><a href="#" class="view-project-btn mt-auto self-start text-xs py-1 px-3">View <i class="fas fa-arrow-right btn-icon"></i></a></div></div></div>
-                                <div class="swiper-slide"><div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col"><img src="image4.jpg" alt="Project Image" class="w-full h-32 object-cover"><div class="p-4 flex flex-col flex-grow"><h4 class="text-md font-bold text-white mb-2">CFD Analysis of Hull</h4><p class="text-xs text-light-gray flex-grow mb-3">Conducting advanced Computational Fluid Dynamics (CFD) simulations to analyze water flow around the hull, accurately predicting resistance and optimizing the vessel's form for enhanced fuel efficiency.</p><a href="#" class="view-project-btn mt-auto self-start text-xs py-1 px-3">View <i class="fas fa-arrow-right btn-icon"></i></a></div></div></div>
+                                <!-- Project Slide 1 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col">
+                                        <img src="image1.jpg" alt="Project Image" class="w-full h-40 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/312F36/AFFF0C?text=Hull+Design';">
+                                        <div class="p-4 flex flex-col flex-grow">
+                                            <h4 class="text-lg font-bold text-white mb-2">Maxsurf Hull Design</h4>
+                                            <p class="text-sm text-light-gray flex-grow mb-4">Utilizing Maxsurf to create and refine high-performance hull forms for optimal stability.</p>
+                                            <a href="#" class="view-project-btn mt-auto self-start text-sm py-2 px-4">View <i class="fas fa-arrow-right btn-icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project Slide 2 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col">
+                                        <img src="image2.jpg" alt="Project Image" class="w-full h-40 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/312F36/AFFF0C?text=Propeller+Design';">
+                                        <div class="p-4 flex flex-col flex-grow">
+                                            <h4 class="text-lg font-bold text-white mb-2">CAESES Propeller Design</h4>
+                                            <p class="text-sm text-light-gray flex-grow mb-4">Leveraging CAESES to design custom propeller geometries, maximizing hydrodynamic efficiency.</p>
+                                            <a href="#" class="view-project-btn mt-auto self-start text-sm py-2 px-4">View <i class="fas fa-arrow-right btn-icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <!-- Project Slide 3 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col">
+                                        <img src="image3.jpg" alt="Project Image" class="w-full h-40 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/312F36/AFFF0C?text=Plate+Development';">
+                                        <div class="p-4 flex flex-col flex-grow">
+                                            <h4 class="text-lg font-bold text-white mb-2">Shell Expansion</h4>
+                                            <p class="text-sm text-light-gray flex-grow mb-4">Creating 2D shell expansion plans from 3D models for efficient shipyard fabrication.</p>
+                                            <a href="#" class="view-project-btn mt-auto self-start text-sm py-2 px-4">View <i class="fas fa-arrow-right btn-icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project Slide 4 -->
+                                <div class="swiper-slide">
+                                    <div class="bg-jet rounded-xl overflow-hidden h-full flex flex-col">
+                                        <img src="image4.jpg" alt="Project Image" class="w-full h-40 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/312F36/AFFF0C?text=CFD+Analysis';">
+                                        <div class="p-4 flex flex-col flex-grow">
+                                            <h4 class="text-lg font-bold text-white mb-2">CFD Analysis of Hull</h4>
+                                            <p class="text-sm text-light-gray flex-grow mb-4">Conducting CFD simulations to analyze water flow and predict resistance for fuel efficiency.</p>
+                                            <a href="#" class="view-project-btn mt-auto self-start text-sm py-2 px-4">View <i class="fas fa-arrow-right btn-icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Navigation -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
                     </section>
                      
@@ -267,96 +295,94 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
     <script>
-        // Tabbed Navigation Logic
-        const navLinks = document.querySelectorAll(".icon-nav-link");
-        const sections = document.querySelectorAll("main > section");
-        const contactButton = document.querySelector('.nav-contact-btn');
-        const flipCard = document.querySelector('.flip-card');
-        const showEmailBtn = document.querySelector('.show-email-btn');
-        const goBackBtn = document.querySelector('.go-back-btn');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Main Tabbed Navigation Logic
+            const navLinks = document.querySelectorAll(".icon-nav-link");
+            const sections = document.querySelectorAll("main > section");
+            const contactButton = document.querySelector('.nav-contact-btn');
+            const flipCard = document.querySelector('.flip-card');
+            const showEmailBtn = document.querySelector('.show-email-btn');
+            const goBackBtn = document.querySelector('.go-back-btn');
 
-        function switchTab(targetId) {
-            navLinks.forEach(navLink => {
-                navLink.classList.remove("active");
-                if (navLink.getAttribute("data-section") === targetId) {
-                    navLink.classList.add("active");
+            function switchTab(targetId) {
+                navLinks.forEach(navLink => {
+                    navLink.classList.toggle("active", navLink.getAttribute("data-section") === targetId);
+                });
+                sections.forEach(section => {
+                    section.classList.toggle("active", section.id === targetId);
+                });
+                if (flipCard && flipCard.classList.contains('flipped')) {
+                    flipCard.classList.remove('flipped');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("data-section");
+                    switchTab(targetId);
+                });
+            });
+
+            if(contactButton) {
+                contactButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchTab('contact');
+                });
+            }
+            
+            // Contact Card Flip Logic
+            if(showEmailBtn) {
+                showEmailBtn.addEventListener('click', () => flipCard.classList.add('flipped'));
+            }
+            if(goBackBtn) {
+                goBackBtn.addEventListener('click', () => flipCard.classList.remove('flipped'));
+            }
+            
+            // Project Slider Initialization
+            new Swiper('.projects-slider', {
+                loop: true,
+                grabCursor: true,
+                slidesPerGroup: 1, // Ensures only one slide moves at a time
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Responsive breakpoints
+                breakpoints: {
+                    // when window width is >= 640px (sm)
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 24
+                    },
+                    // when window width is < 640px
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    }
                 }
             });
-            sections.forEach(section => {
-                section.classList.toggle("active", section.id === targetId);
-                section.classList.toggle("hidden", section.id !== targetId);
-            });
-             // Reset flip card when switching tabs
-            if (flipCard.classList.contains('flipped')) {
-                flipCard.classList.remove('flipped');
-            }
-        }
 
-        navLinks.forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute("data-section");
-                switchTab(targetId);
+            // Typing Animation Logic
+            new Typed('#typed-subtitle', {
+                strings: ['Naval Architect', 'Offshore Engineer', 'Modeler', 'Student'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true,
+                smartBackspace: true
             });
-        });
 
-        if(contactButton) {
-            contactButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                switchTab('contact');
-            });
-        }
-        
-        // Contact Card Flip Logic
-        if(showEmailBtn) {
-            showEmailBtn.addEventListener('click', () => {
-                flipCard.classList.add('flipped');
-            });
-        }
-        if(goBackBtn) {
-            goBackBtn.addEventListener('click', () => {
-                flipCard.classList.remove('flipped');
-            });
-        }
-        
-        // Set the initial active tab on page load
-        document.addEventListener('DOMContentLoaded', () => {
+            // Set the initial active main tab on page load
             switchTab('about');
-        });
-
-        // Project Slider Initialization
-        const swiper = new Swiper('.projects-slider', {
-            loop: true,
-            grabCursor: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            slidesPerView: 1,
-            spaceBetween: 30,
-        });
-
-        // Typing Animation Logic
-        const typed = new Typed('#typed-subtitle', {
-            strings: [
-                'Naval Architect',
-                'Offshore Engineer',
-                'Modeler',
-                'Student'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: true,
-            smartBackspace: true
         });
     </script>
 </body>
